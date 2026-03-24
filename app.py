@@ -28,7 +28,7 @@ if st.button("Analizi Başlat"):
     else:
         try:
             genai.configure(api_key=api_key)
-            model = genai.GenerativeModel('gemini-pro')
+            model = genai.GenerativeModel('gemini-1.5-flash')
             
             with st.spinner('Yapay zeka analiz ediyor...'):
                 prompt = f"""

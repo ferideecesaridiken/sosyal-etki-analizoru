@@ -18,15 +18,15 @@ if st.button("Analizi Başlat"):
     else:
         try:
             genai.configure(api_key=api_key)
-            # 2026'nın asıl modeli:
-            model = genai.GenerativeModel('gemini-3-flash')
+            # İŞTE ÇÖZÜM BURADA: Sistemin %100 tanıdığı model!
+            model = genai.GenerativeModel('gemini-1.5-flash')
             
             with st.spinner('Analiz ediliyor...'):
-                response = model.generate_content(f"Bir siyaset bilimci olarak şu metni sosyal etkisi ve BM hedefleri açısından analiz et: {user_input}")
+                response = model.generate_content(f"Bir siyaset bilimci olarak şu metni analiz et: {user_input}")
                 st.success("✅ Analiz Tamamlandı!")
                 st.write(response.text)
         except Exception as e:
-            st.error(f"Bağlantı hatası: {e}")
+            st.error(f"Hata oluştu: {e}")
 
 st.divider()
-st.caption("Feride Ece - İstanbul Üniversitesi")
+st.caption("Feride Ece - İstanbul Üniversitesi Siyaset Bilimi")
